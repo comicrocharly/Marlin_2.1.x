@@ -1588,7 +1588,7 @@
 #if ANY(SR_MKS, SR_BTT)
   #define DEFAULT_MAX_FEEDRATE          { 400, 400, 400, 100 }
 #else
-  #define DEFAULT_MAX_FEEDRATE          { 200, 200, 200, 100 }
+  #define DEFAULT_MAX_FEEDRATE          { 200, 200, 200, 40 }  // FLSun Q5: E max feedrate 40 mm/s
 #endif
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
@@ -1605,7 +1605,7 @@
 #if ANY(SR_MKS, SR_BTT)
   #define DEFAULT_MAX_ACCELERATION      { 6000, 6000, 6000, 3000 }
 #else
-  #define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 3000, 3000 }
+  #define DEFAULT_MAX_ACCELERATION      { 3000, 3000, 3000, 1300 }  // FLSun Q5: E max accel 1300 mm/s^2
 #endif
 
 //#define LIMITED_MAX_ACCEL_EDITING     // Limit edit via M201 or LCD to DEFAULT_MAX_ACCELERATION * 2
@@ -2208,7 +2208,7 @@
   #ifdef INV_EXT
     #define INVERT_E0_DIR true
   #else
-    #define INVERT_E0_DIR false
+    #define INVERT_E0_DIR true    // FLSun Q5: estrusione invertita
   #endif
 #endif
 // @section extruder
@@ -2948,8 +2948,8 @@ EEPROM_W25Q
 // Preheat Constants - Up to 10 are supported without changes
 //
 #define PREHEAT_1_LABEL       "PLA"
-#define PREHEAT_1_TEMP_HOTEND 205
-#define PREHEAT_1_TEMP_BED     70
+#define PREHEAT_1_TEMP_HOTEND 215
+#define PREHEAT_1_TEMP_BED     55
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED   200 // Value from 0 to 255
 

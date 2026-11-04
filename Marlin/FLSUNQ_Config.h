@@ -49,9 +49,9 @@
 /*_______________________1___________________________*/
 //==================== Hardware =====================//
 /*-------------Motherboard/Printer-(1 CHOICE)-------*/
-#define QQSP                         // (Default_QQS) env = flsun_hispeedv1
+//#define QQSP                       // (Default_QQS) env = flsun_hispeedv1
                                      // env:flsun_hispeedv1 (GD32F303VE6) 
-//#define Q5                         // env = mks_robin_nano_v1v2 or (Q5_2021) env = mks_robin_nano_v1_3_f4
+#define Q5                          // env = mks_robin_nano_v1v2 or (Q5_2021) env = mks_robin_nano_v1_3_f4
 //#define MOTHERBOARD BOARD_MKS_ROBIN_NANO_V1_3_F4 // for Q5_2021 = uncomment/comment for your MoBo nanoV1.3.
 
 //#define SR_MKS                     // env = mks_robin_nano_v3_usb_flash_drive_msc
@@ -72,7 +72,7 @@
 /*________________________2___________________________*/
           /*-----Type Stepper Drivers-(1 CHOICE)-----*/
 /* MODE STOCK for QQS & Q5 & SR */
-#define STOCK                         // (S) (Default_QQS) For 4xA4988(green or red color).
+//#define STOCK                       // (S) (Default_QQS) For 4xA4988(green or red color).
                                       // (S) (Default_Q5) For 3xTMC2208+1xA4988.
                                       // (S) (Default_SR) For 4xTMC2209_UART.
 
@@ -81,7 +81,7 @@
 //#define ALL_TMC9                    // (9) For 4xTMC2209_STANDALONE
 
 /* MODE UART XYZ+E for QQS & Q5 */
-//#define Q_UART8                     // (U8) 4xTMC2208_UART Note: remove on your printer the module WIFI and wire your TMC.
+#define Q_UART8                      // (U8) 4xTMC2208_UART Note: remove on your printer the module WIFI and wire your TMC.
 //#define Q_UART9                     // (U9) 4xTMC2209_UART Note: remove on your printer the module WIFI and wire your TMC.
 
 /* SPECIAL MODE UART XYZ+E for QQS-Pro */
@@ -94,7 +94,7 @@
  * -- TMC2208_STANDALONE/TMC2209_STANDALONE/TMC2208/TMC2209. ---//
  * =============================================================//
  */
-//#define DRIVER_EXT TMC2209_STANDALONE //TMC2209 //A4988 // LV8729//
+#define DRIVER_EXT TMC2209           // (E) TMC2209_UART (was: TMC2209_STANDALONE // TMC2209 // A4988 // LV8729)
 //Only WITH Q5 older stepper(A4988/DRV8825/LV8729)
 //#define INV_EXT
 
@@ -138,7 +138,7 @@
 #define LCD_LANGUAGE en                    // Change for your country ('bg':'Bulgarian', 'ca':'Catalan', 'cz':'Czech', 'da':'Danish', 'el':'Greek', 'fi':'Finnish', 'hr':'Croatian', 'hu':'Hungarian', 'jp_kana':'Japanese', 'nl':'Dutch', 'pl':'Polish', 'pt_br':'Portuguese (Brazilian)', 'ro':'Romanian', 'ru':'Russian', 'sk':'Slovak', 'sv':'Swedish', 'tr':'Turkish', 'uk':'Ukrainian', 'vi':'Vietnamese', 'zh_CN':'Chinese (Simplified)', etc)
 //#define LCD_LANGUAGE_2 fr                 // Add your language for TFT_COLOR_UI ex: zh_CN
 
-//#define BOOT_MARLIN_LOGO_SMALL           // Small Logo Marlin to reduce de binary. Comment to have normal LOGO(Default).
+#define BOOT_MARLIN_LOGO_SMALL           // Small Logo Marlin to reduce de binary. Comment to have normal LOGO(Default).
 
 /*_________________________________4______________________________*/
           /*---- Extruder, Custom effector and Modules -----*/
@@ -215,9 +215,9 @@
       * ===============================
       */
 
-#define DELTA_HOME_TO_SAFE_ZONE        // Option to move down after homing to a height where XYZ movement is unconstrained.
+//#define DELTA_HOME_TO_SAFE_ZONE        // Option to move down after homing to a height where XYZ movement is unconstrained.
 
-#define PREHEAT_BEFORE_PROBING           //(P) (Default) Run a PreHeat bed at 60°C only.
+//#define PREHEAT_BEFORE_PROBING           //(P) (Default) Run a PreHeat bed at 60°C only.
 //#define PREHEAT_BEFORE_LEVELING        // Option to preheat (nozzle and bed) before levelling (H80/B60).
 
 // ---Expe tools Levelling-------
@@ -536,13 +536,13 @@
 #endif
 //Jerk
 #ifndef XYZJERK
-  #define XYZJERK  10.0
+  #define XYZJERK  8.0
 #endif
 #ifndef EJERK
   #ifdef DDRIVE
     #define EJERK       2.8
   #else
-    #define EJERK       10.0
+    #define EJERK       5.0
   #endif
 #endif
 //Z_OffSet

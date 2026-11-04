@@ -2492,7 +2492,7 @@
   #elif ENABLED(DDRIVE)
     #define ADVANCE_K 0.048  
   #else
-    #define ADVANCE_K 0.22
+    #define ADVANCE_K 0.65     // FLSun Q5: K_advance 0.65
   #endif
   //#define ADVANCE_K_EXTRA       // Add a second linear advance constant, configurable with 'M900 L'.
 #endif
