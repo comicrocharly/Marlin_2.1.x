@@ -232,7 +232,7 @@
 #define LIN_ADVANCE                     // (L) (Default2209) with K=0 For TMC_UART2208 prefer mode spreadCycle(by TFT menu) or commented if problem.
 //#define POWER_LOSS_RECOVERY             // (Default) Continue print after Power-Loss.
 #define FWRETRACT                       // (Default) Firmware-based and LCD-controlled retract
-#define INPUT_SHAPING                   // (Z) Zero Vibration (ZV) Input Shaping for X and/or Y movements.
+//#define INPUT_SHAPING                 // (Z) Zero Vibration (ZV) Input Shaping for X and/or Y movements. — disabilitato come nel 2023
 
 //=================================================================================//
 //======================== End_Hardware ===========================================//
