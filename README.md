@@ -19,13 +19,16 @@ This repository is a fork of [Foxies-CSTL/Marlin_2.1.x](https://github.com/Foxie
 
 ### Changes vs. the base repository
 
-| # | Change | Details |
-|---|--------|---------|
-| 1 | **Upstream merge** | `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-04): UBL refactor (#28510), MMU3 fixes, MKS WiFi serial fixes, plus ~480 further upstream commits |
-| 2 | **FLSUN Q5 release config** (`1a3b1bba`) | PlatformIO env `mks_robin_nano_v1v2` · extruder Q_UART8 + TMC2209 with inverted E direction · jerk 8 (XY) / 5 (Z) · E max accel 1300, E max feedrate 40 · PLA 215 °C / bed 55 °C · K_advance 0.65 · small boot logo |
-| 3 | **Prebuilt firmware** (`2374e81`) | `firmware/Robin_nano35_Q5.bin` (built 2026-11-04) |
+- **Upstream merge** — `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-04): UBL refactor (#28510), MMU3 fixes, MKS WiFi serial fixes, plus ~480 further upstream commits
+- **FLSUN Q5 release config** (`1a3b1bba`):
+  - PlatformIO env: `mks_robin_nano_v1v2`
+  - Extruder: Q_UART8 + TMC2209, inverted E direction
+  - Motion: jerk 8 (XY) / 5 (Z), E max accel 1300, E max feedrate 40
+  - Print defaults: PLA 215 °C / bed 55 °C, K_advance 0.65
+  - Safe homing (`Z_SAFE_HOMING`) disabled (ignored by Marlin on delta kinematics anyway)
+  - Small boot logo
 
-**Files modified vs. base:** `Marlin/Configuration.h`, `Marlin/Configuration_adv.h`, `Marlin/FLSUNQ_Config.h`, `platformio.ini`, `firmware/Robin_nano35_Q5.bin`
+**Files modified vs. base:** `Marlin/Configuration.h`, `Marlin/Configuration_adv.h`, `Marlin/FLSUNQ_Config.h`, `platformio.ini`
 
 ### Build
 
@@ -35,7 +38,7 @@ platformio run -e mks_robin_nano_v1v2
 
 ### Branches
 
-- **`main`** — release config + prebuilt firmware (default branch)
+- **`main`** — release config (default branch)
 - **`FLSUN_BUGFIX-MULTI`** — development branch, same tip as `main`
 
 ---
