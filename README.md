@@ -13,6 +13,33 @@
     <a href="//fosstodon.org/@marlinfirmware"><img alt="Follow MarlinFirmware on Mastodon" src="https://img.shields.io/mastodon/follow/109450200866020466?domain=https%3A%2F%2Ffosstodon.org&logoColor=%2300B&style=social"></a>
 </p>
 
+## 🛠️ This fork — FLSUN Q5 (Delta)
+
+This repository is a fork of [Foxies-CSTL/Marlin_2.1.x](https://github.com/Foxies-CSTL/Marlin_2.1.x), tailored for the **FLSUN Q5 delta printer** (MKS Robin Nano 35 / STM32, extruder Q_UART8 + TMC2209).
+
+### Changes vs. the base repository
+
+| # | Change | Details |
+|---|--------|---------|
+| 1 | **Upstream merge** | `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-04): UBL refactor (#28510), MMU3 fixes, MKS WiFi serial fixes, plus ~480 further upstream commits |
+| 2 | **FLSUN Q5 release config** (`1a3b1bba`) | PlatformIO env `mks_robin_nano_v1v2` · extruder Q_UART8 + TMC2209 with inverted E direction · jerk 8 (XY) / 5 (Z) · E max accel 1300, E max feedrate 40 · PLA 215 °C / bed 55 °C · K_advance 0.65 · small boot logo |
+| 3 | **Prebuilt firmware** (`2374e81`) | `firmware/Robin_nano35_Q5.bin` (built 2026-11-04) |
+
+**Files modified vs. base:** `Marlin/Configuration.h`, `Marlin/Configuration_adv.h`, `Marlin/FLSUNQ_Config.h`, `platformio.ini`, `firmware/Robin_nano35_Q5.bin`
+
+### Build
+
+```bash
+platformio run -e mks_robin_nano_v1v2
+```
+
+### Branches
+
+- **`main`** — release config + prebuilt firmware (default branch)
+- **`FLSUN_BUGFIX-MULTI`** — development branch, same tip as `main`
+
+---
+
 ### 🌍 Translations
 
 <table>
