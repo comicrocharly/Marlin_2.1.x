@@ -25,7 +25,7 @@ This repository is a fork of [Foxies-CSTL/Marlin_2.1.x](https://github.com/Foxie
   - Extruder: Q_UART8 + TMC2209, inverted E direction
   - Motion: jerk 8 (XY) / 5 (Z), E max accel 1300, E max feedrate 40
   - Print defaults: PLA 215 °C / bed 55 °C, K_advance 0.65
-  - Safe homing (`Z_SAFE_HOMING`) disabled (ignored by Marlin on delta kinematics anyway)
+  - Safe homing (`DELTA_HOME_TO_SAFE_ZONE`) disabled — no post-homing move to a height where XYZ movement is unconstrained
   - Small boot logo
 
 **Files modified vs. base:** `Marlin/Configuration.h`, `Marlin/Configuration_adv.h`, `Marlin/FLSUNQ_Config.h`, `platformio.ini`
