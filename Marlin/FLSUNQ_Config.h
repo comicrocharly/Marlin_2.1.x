@@ -154,7 +154,7 @@
  */
                   /* User settings extruder */
 //#define INV_EXT                        // Uncommment to reverse direction for BMG_righ/Sherpa/SuperDriveHX.
-//#define EXTRUDER_STEPS  410            // Uncomment to ajust your eSteps (on firmware-32steps is doubled).
+#define EXTRUDER_STEPS  863             // Calibrated 2026-11-06: E100 test -> 95mm extruded at nominal 820 (820*100/95 = 863.2)
 
 // BMG_right Extruder (B) step(417) ou SuperDriveHX Extruder (X) step(720).
 //#define BMG                            //(B) Uncommment for BMG_left(3:1).
