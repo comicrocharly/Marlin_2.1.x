@@ -17,7 +17,7 @@
 
 This repository is a fork of [Foxies-CSTL/Marlin_2.1.x](https://github.com/Foxies-CSTL/Marlin_2.1.x), tailored for the **FLSUN Q5 delta printer** (MKS Robin Nano 35 / STM32, extruder Q_UART8 + TMC2209).
 
-### Changes vs. the base repository
+### Changes from the base repository
 
 - **Upstream merge** — `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-12): UBL refactor (#28510), MMU3 fixes, MKS WiFi serial fixes, plus ~520 further upstream commits
 - **FLSUN Q5 release config** (`1a3b1bba`):
@@ -29,7 +29,7 @@ This repository is a fork of [Foxies-CSTL/Marlin_2.1.x](https://github.com/Foxie
   - Safe homing (`DELTA_HOME_TO_SAFE_ZONE`) disabled — no post-homing move to a height where XYZ movement is unconstrained
   - Small boot logo
 
-**Files modified vs. base:** `Marlin/Configuration.h`, `Marlin/Configuration_adv.h`, `Marlin/FLSUNQ_Config.h`, `platformio.ini`
+**Files modified from the base repository:** `Marlin/Configuration.h`, `Marlin/Configuration_adv.h`, `Marlin/FLSUNQ_Config.h`, `platformio.ini`
 
 ### Build
 
