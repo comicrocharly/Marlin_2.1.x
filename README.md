@@ -19,12 +19,13 @@ This repository is a fork of [Foxies-CSTL/Marlin_2.1.x](https://github.com/Foxie
 
 ### Changes vs. the base repository
 
-- **Upstream merge** — `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-04): UBL refactor (#28510), MMU3 fixes, MKS WiFi serial fixes, plus ~480 further upstream commits
+- **Upstream merge** — `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-12): UBL refactor (#28510), MMU3 fixes, MKS WiFi serial fixes, plus ~520 further upstream commits
 - **FLSUN Q5 release config** (`1a3b1bba`):
   - PlatformIO env: `mks_robin_nano_v1v2`
   - Extruder: Q_UART8 + TMC2209, inverted E direction
   - Motion: jerk 8 (XY) / 5 (Z), E max accel 1300, E max feedrate 40
-  - Print defaults: PLA 215 °C / bed 55 °C, K_advance 0.65
+  - Print defaults: PLA 215 °C / bed 55 °C
+  - Extruder steps: `EXTRUDER_STEPS` 863 (calibrated 2026-11-06, E100 test), linear advance `K_advance` 0.55 (calibrated 2026-11-06)
   - Safe homing (`DELTA_HOME_TO_SAFE_ZONE`) disabled — no post-homing move to a height where XYZ movement is unconstrained
   - Small boot logo
 
