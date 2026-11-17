@@ -986,7 +986,7 @@
   #ifdef Q5
     #define DEFAULT_BED_KP 20.20
     #define DEFAULT_BED_KI 3.94
-    #define DEFAULT_BED_KD 69.11
+    #define DEFAULT_BED_KD 74.00  // was 69.11: +Kd per smorzare l'overshoot di ~2°C del bed
   #elif ANY(SR_MKS, SR_BTT)
     #define DEFAULT_BED_KP 268.6112
     #define DEFAULT_BED_KI 52.5401
@@ -2671,8 +2671,10 @@
   #define UBL_MESH_EDIT_MOVES_Z     // Sophisticated users prefer no movement of nozzle
   #define UBL_SAVE_ACTIVE_ON_M500   // Save the currently active mesh in the current slot on M500
 
-  //#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // When the nozzle is off the mesh, this value is used
-                                          // as the Z-Height correction value.
+  //#define MAX_SAVED_MESHES   100    // (count) Maximum number of meshes to store to EEPROM (0 disables). Actual slots are capped by free EEPROM.
+
+  //#define UBL_Z_RAISE_WHEN_OFF_MESH 2.5 // (mm) When the nozzle is off the mesh, this value is used
+                                        // as the Z-Height correction value.
 
   #define UBL_MESH_WIZARD           // Run several commands in a row to get a complete mesh
 
@@ -2952,7 +2954,7 @@ EEPROM_W25Q
 //
 #define PREHEAT_1_LABEL       "PLA"
 #define PREHEAT_1_TEMP_HOTEND 215
-#define PREHEAT_1_TEMP_BED     55
+#define PREHEAT_1_TEMP_BED     58
 #define PREHEAT_1_TEMP_CHAMBER 35
 #define PREHEAT_1_FAN_SPEED   200 // Value from 0 to 255
 
