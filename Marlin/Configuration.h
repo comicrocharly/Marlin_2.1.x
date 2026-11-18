@@ -1591,7 +1591,7 @@
 #if ANY(SR_MKS, SR_BTT)
   #define DEFAULT_MAX_FEEDRATE          { 400, 400, 400, 100 }
 #else
-  #define DEFAULT_MAX_FEEDRATE          { 200, 200, 200, 40 }  // FLSun Q5: E max feedrate 40 mm/s
+  #define DEFAULT_MAX_FEEDRATE          { 250, 250, 250, 40 }  // FLSun Q5: E max feedrate 40 mm/s
 #endif
 
 //#define LIMITED_MAX_FR_EDITING        // Limit edit via M203 or LCD to DEFAULT_MAX_FEEDRATE * 2
