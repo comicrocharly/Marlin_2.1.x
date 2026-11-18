@@ -17,17 +17,31 @@
 
 This repository is a fork of [Foxies-CSTL/Marlin_2.1.x](https://github.com/Foxies-CSTL/Marlin_2.1.x), tailored for the **FLSUN Q5 delta printer** (MKS Robin Nano 35 / STM32, extruder Q_UART8 + TMC2209).
 
+Latest release: **[2.1.2.11](https://github.com/comicrocharly/Marlin_2.1.x/releases/tag/2.1.2.11)** (prebuilt firmware attached).
+
 ### Changes from the base repository
 
-- **Upstream merge** — `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-12): UBL refactor (#28510), MMU3 fixes, MKS WiFi serial fixes, plus ~520 further upstream commits
+- **Upstream merge** — `MarlinFirmware/Marlin` `bugfix-2.1.x` merged into `FLSUN_BUGFIX-MULTI` (as of 2026-11-12, `05eab9b023`): MKS WiFi serial fixes, RP2040 sensorless homing fix, STM32F1 SDIO hang fix, ESP32 EMERGENCY_PARSER, MMU firmware version display, plus ~520 further upstream commits
 - **FLSUN Q5 release config** (`1a3b1bba`):
   - PlatformIO env: `mks_robin_nano_v1v2`
   - Extruder: Q_UART8 + TMC2209, inverted E direction
   - Motion: jerk 8 (XY) / 5 (Z), E max accel 1300, E max feedrate 40
-  - Print defaults: PLA 215 °C / bed 55 °C
-  - Extruder steps: `EXTRUDER_STEPS` 863 (calibrated 2026-11-06, E100 test), linear advance `K_advance` 0.55 (calibrated 2026-11-06)
+  - Print defaults: PLA 215 °C / bed 55 °C (PLA preheat preset)
+  - Extruder steps: `EXTRUDER_STEPS` 863 (calibrated 2026-11-06, E100 test), linear advance `K_advance` 0.56 (calibrated 2026-11-06)
+  - Bed PID retuned (Kd)
+  - Volumetric mode off by default (`VOLUMETRIC_DEFAULT_ON` disabled — mm mode, matching the 2023 1.3.0 config and Orca mm profiles)
   - Safe homing (`DELTA_HOME_TO_SAFE_ZONE`) disabled — no post-homing move to a height where XYZ movement is unconstrained
   - Small boot logo
+- **Motor tuning** (`fdc9d0d1`, `3bd74a03`):
+  - `XYZ_CURRENT_HOME` 900 → 700 mA (matching the Foxies 2023 release)
+  - Input shaping and ft_motion are present in the codebase but **disabled** (available for future tuning via `M593`)
+
+### Machine parameters
+
+- **DELTA geometry**: diagonal rod 285.0 mm, delta height 366.0 mm, print radius 130.5 mm, `DELTAS_CALIBRATION_MENU`
+- **Drivers**: XYZ TMC2208 UART, E0 TMC2209 UART — all in StealthChop, `CHOPPER_DEFAULT_24V`
+- **Currents**: XYZ 900 mA, XYZ home 700 mA, E 850 mA, 32 microsteps on all axes
+- **Speed/acceleration**: max feedrate 200/200/200/40 mm/s, acceleration 3700 (print) / 2800 (travel) mm/s²
 
 **Files modified from the base repository:** `Marlin/Configuration.h`, `Marlin/Configuration_adv.h`, `Marlin/FLSUNQ_Config.h`, `platformio.ini`
 
