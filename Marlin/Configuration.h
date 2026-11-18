@@ -1244,7 +1244,7 @@
   #elif ENABLED(Q5)
     #define PRINTABLE_RADIUS 105.0
     #define DELTA_DIAGONAL_ROD     215.0
-    #define DELTA_HEIGHT           210.0
+    #define DELTA_HEIGHT           230.0      // Q5: nozzle height above bed at home (measured 2026-11, was 210.0)
     #define DELTA_ENDSTOP_ADJ { 0.0, 0.0, 0.0 }      // Trim adjustments for individual towers
     #define DELTA_RADIUS           107.5
     #define DELTA_TOWER_ANGLE_TRIM { 0.0, 0.0 , 0.0 }
