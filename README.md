@@ -32,9 +32,6 @@ Latest release: **[2.1.2.11](https://github.com/comicrocharly/Marlin_2.1.x/relea
   - Volumetric mode off by default (`VOLUMETRIC_DEFAULT_ON` disabled — mm mode, matching the 2023 1.3.0 config and Orca mm profiles)
   - Safe homing (`DELTA_HOME_TO_SAFE_ZONE`) disabled — no post-homing move to a height where XYZ movement is unconstrained
   - Small boot logo
-- **Motor tuning** (`fdc9d0d1`, `3bd74a03`):
-  - `XYZ_CURRENT_HOME` 900 → 700 mA (matching the Foxies 2023 release)
-  - Input shaping and ft_motion are present in the codebase but **disabled** (available for future tuning via `M593`)
 
 ### Machine parameters
 
